@@ -1,0 +1,10 @@
+C:\Users\Muhammed Aly\source\repos\archi\archi\bin\Debug\archi.exe.config
+C:\Users\Muhammed Aly\source\repos\archi\archi\bin\Debug\archi.exe
+C:\Users\Muhammed Aly\source\repos\archi\archi\bin\Debug\archi.pdb
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.csprojAssemblyReference.cache
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.Form1.resources
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.Properties.Resources.resources
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.csproj.GenerateResource.cache
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.csproj.CoreCompileInputs.cache
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.exe
+C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.pdb
