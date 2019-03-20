@@ -8,7 +8,9 @@ namespace archi
 {
     public class global
     {
-        public  string getBinary(int x)
+
+
+        public static string getBinary(int x, int len)
         {
             string s = "";
             while(x != 0)
@@ -19,77 +21,133 @@ namespace archi
                     s += "1";
                 x /= 2;
             }
-            while (s.Length < 5)
+            while (s.Length < len)
                 s += '0';
             char[] c = s.ToCharArray();
             Array.Reverse(c);
             return new string(c);
         }
-        public  string numofreg(string nameofreg)
+        public static void scan_code_seg(string[] code)
+        {
+            int emp_line = 0, text_start = 0;
+            bool text = false;
+            for (int i = 0; i < code.Length; i++)
+            {
+                if (cutter(code[i]).Count == 0)
+                {
+                    emp_line++;
+                    continue;
+                }
+                if (code[i].Substring(0, 5) == ".data")
+                {
+                    continue;
+                }
+                else if (code[i].Substring(0, 5) == ".text")
+                {
+                    emp_line = 0;
+                    text = true;
+                    continue;
+                }
+
+                if (!text)
+                {
+                    // data seg 
+                }
+
+                else
+                {
+                    List<string> tmp = cutter(code[i]);
+                    if (tmp[0].Last() == ':' || tmp[1] == ":")  // valid label 
+                    {
+                        if (tmp[0].Last() == ':')
+                        {
+                            tmp[0] = tmp[0].Substring(0, tmp[0].Length - 1);
+                        }
+                        int inc = 0;
+                        if (tmp.Count <= 2)
+                            inc++;
+                        label_address[tmp[0]] = getBinary((text_start - emp_line), 26);
+
+                        if (tmp.Count > 2)
+                            text_start += 4;
+                        else
+                            text_start++;
+                    }
+                    else
+                    {
+                        // not label 
+                        text_start += 4;
+                    }
+                }
+            }
+        }
+
+
+        public string numofreg(string nameofreg)
         {
             if (nameofreg == "$zero")
                 return "00000";
             if (nameofreg == "$at")
-                return getBinary(01);
+                return getBinary(01, 5);
             if (nameofreg == "$v0")
-                return getBinary(02);
+                return getBinary(02, 5);
             if (nameofreg == "$v1")
-                return getBinary(03);
+                return getBinary(03, 5);
             if (nameofreg == "$a0")
-                return getBinary(04);
+                return getBinary(04, 5);
             if (nameofreg == "$a1")
-                return getBinary(05);
+                return getBinary(05, 5);
             if (nameofreg == "$a2")
-                return getBinary(06);
+                return getBinary(06, 5);
             if (nameofreg == "$a3")
-                return getBinary(07);
+                return getBinary(07, 5);
             if (nameofreg == "$t0")
-                return getBinary(08);
+                return getBinary(08, 5);
             if (nameofreg == "$t1")
-                return getBinary(09);
+                return getBinary(09, 5);
             if (nameofreg == "$t2")
-                return getBinary(10);
+                return getBinary(10, 5);
             if (nameofreg == "$t3")
-                return getBinary(011);
+                return getBinary(011, 5);
             if (nameofreg == "$t4")
-                return getBinary(012);
+                return getBinary(012, 5);
             if (nameofreg == "$t5")
-                return getBinary(013);
+                return getBinary(013, 5);
             if (nameofreg == "$t6")
-                return getBinary(014);
+                return getBinary(014, 5);
             if (nameofreg == "$t7")
-                return getBinary(015);
+                return getBinary(015, 5);
             if (nameofreg == "$s0")
-                return getBinary(016);
+                return getBinary(016, 5);
             if (nameofreg == "$s1")
-                return getBinary(017);
+                return getBinary(017, 5);
             if (nameofreg == "$s2")
-                return getBinary(018);
+                return getBinary(018, 5);
             if (nameofreg == "$s3")
-                return getBinary(019);
+                return getBinary(019, 5);
             if (nameofreg == "$s4")
-                return getBinary(20);
+                return getBinary(20, 5);
             if (nameofreg == "$s5")
-                return getBinary(021);
+                return getBinary(021, 5);
             if (nameofreg == "$s6")
-                return getBinary(022);
+                return getBinary(022, 5);
             if (nameofreg == "$s7")
-                return getBinary(023);
+                return getBinary(023, 5);
             if (nameofreg == "$t8")
-                return getBinary(024);
+                return getBinary(024, 5);
             if (nameofreg == "$t9")
-                return getBinary(025);
+                return getBinary(025, 5);
             if (nameofreg == "$k0")
-                return getBinary(026);
+                return getBinary(026, 5);
             if (nameofreg == "$k1")
-                return getBinary(027);
+                return getBinary(027, 5);
             if (nameofreg == "$gp")
-                return getBinary(028);
+                return getBinary(028, 5);
             if (nameofreg == "$sp")
-                return getBinary(029);
+                return getBinary(029, 5);
             if (nameofreg == "fp")
-                return getBinary(30);
-            return getBinary(31);
+                return getBinary(30, 5);
+            return getBinary(31, 5);
         }
         // data 
         public static Dictionary<string, string> opcode = new Dictionary<string, string>();
