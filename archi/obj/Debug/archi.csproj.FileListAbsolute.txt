@@ -36,3 +36,6 @@ C:\Users\Heshamovic\Documents\GitHub\architecture-project\archi\obj\Debug\archi.
 C:\Users\Heshamovic\Documents\GitHub\architecture-project\archi\obj\Debug\archi.csproj.CoreCompileInputs.cache
 C:\Users\Heshamovic\Documents\GitHub\architecture-project\archi\obj\Debug\archi.exe
 C:\Users\Heshamovic\Documents\GitHub\architecture-project\archi\obj\Debug\archi.pdb
+C:\Users\Ahmed Araby\Documents\GitHub\architecture-project\archi\bin\Debug\archi.exe.config
+C:\Users\Ahmed Araby\Documents\GitHub\architecture-project\archi\obj\Debug\archi.exe
+C:\Users\Ahmed Araby\Documents\GitHub\architecture-project\archi\obj\Debug\archi.pdb
