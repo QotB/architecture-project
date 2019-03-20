@@ -39,16 +39,16 @@ namespace archi
         {
             global temp=new global(); 
             if (instruction == "add")
-                return temp.getBinary(32);
+                return global.getBinary(32, 6);
             if (instruction == "and")
-                return temp.getBinary(36);
+                return global.getBinary(36, 6);
             if (instruction == "sub")
-                return temp.getBinary(34);
+                return global.getBinary(34, 6);
             if (instruction == "nor")
-                return temp.getBinary(39);
+                return global.getBinary(39, 6);
             if (instruction == "or")
-                return temp.getBinary(37);
-            return temp.getBinary(42);
+                return global.getBinary(37, 6);
+            return global.getBinary(42, 6);
         }
 
     }
