@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace archi
 {
-    class global
+    public class global
     {
-        public static string getBinary(int x)
+        public  string getBinary(int x)
         {
             string s = "";
             while(x != 0)
@@ -25,7 +25,7 @@ namespace archi
             Array.Reverse(c);
             return new string(c);
         }
-        public static string numofreg(string nameofreg)
+        public  string numofreg(string nameofreg)
         {
             if (nameofreg == "$zero")
                 return "00000";
@@ -91,20 +91,73 @@ namespace archi
                 return getBinary(30);
             return getBinary(31);
         }
-        public static string getfunct(string instruction)
+        // data 
+        public static Dictionary<string, string> opcode = new Dictionary<string, string>();
+        public static Dictionary<string, string> label_address = new Dictionary<string, string>();
+        public static Dictionary<string ,int > choice = new Dictionary<string,int>();
+        // functions 
+        public static List<string> cutter(string mips_ins)
         {
-            if (instruction == "add")
-                return getBinary(32);
-            if (instruction == "and")
-                return getBinary(36);
-            if (instruction == "sub")
-                return getBinary(34);
-            if (instruction == "nor")
-                return getBinary(39);
-            if (instruction == "or")
-                return getBinary(37);
-            return getBinary(42);
+            List<string> tmp1 = new List<string>();
+            string tmp2 = "";
+            mips_ins += '#'; // comment , prevent lossing last part  
+            for (int i = 0; i < mips_ins.Length; i++)
+            {
+                if (mips_ins[i] == ' ' || mips_ins[i] == '#' || mips_ins[i] == ',')
+                {
+                    if (tmp2 == "" || tmp2 == ",")  // not valid 
+                    {
+                        tmp2 = "";
+                        continue;
+                    }
+                    
+
+                    tmp1.Add(tmp2);
+                    tmp2 = "";
+
+                    if (mips_ins[i] == '#')  // could be comment  , or my end 
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    tmp2 += mips_ins[i];
+                }
+            }
+            return tmp1;
         }
 
+
+
+        // fill op code 
+        public static void fill_opcode()
+        {
+            opcode.Add("j", "000010");
+
+
+            /*
+             *  etc.........
+             */
+        }
+       
+        public static void init()
+        {
+            choice["add"] = 0;
+            choice["and"] = 0;
+            choice["sub"] = 0;
+            choice["nor"] = 0;
+            choice["or"] = 0;
+            choice["slt"] = 0;
+
+            choice["addi"] = 1;
+            choice["lw"] = 1;
+            choice["sw"] = 1;
+            choice["beq"] = 1;
+            choice["bne"] = 1;
+
+            choice["j"] = 2;
+
+        }
     }
 }
