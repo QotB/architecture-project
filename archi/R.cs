@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace archi
 {
-    public class R
+    public class R : AllTypes
     {
         string mask = ""; 
         public R (List<string> arguments)
