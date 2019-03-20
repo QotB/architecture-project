@@ -8,3 +8,21 @@ C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.csproj.GenerateRe
 C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.csproj.CoreCompileInputs.cache
 C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.exe
 C:\Users\Muhammed Aly\source\repos\archi\archi\obj\Debug\archi.pdb
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\archi.exe.config
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.exe
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.pdb
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\archi.exe
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\archi.pdb
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\mscorlib.dll
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\System.Net.Http.dll
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\System.Net.Http.xml
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\ar\mscorlib.resources.dll
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\normidna.nlp
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\normnfc.nlp
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\normnfd.nlp
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\normnfkc.nlp
+C:\Users\user\Documents\GitHub\architecture-project\archi\bin\Debug\normnfkd.nlp
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.Form1.resources
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\architecture-project\archi\obj\Debug\archi.csproj.GenerateResource.Cache

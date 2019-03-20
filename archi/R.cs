@@ -21,8 +21,9 @@ namespace archi
                 reg2 = reg2.Substring(0, reg2.Length - 1);
             if (reg3.Last() == ',')
                 reg3 = reg3.Substring(0, reg3.Length - 1);
-            string r1 = global.numofreg(reg2), r2 = global.numofreg(reg3), r3 = global.numofreg(reg1);
-            string fun = global.getfunct(instruction);
+            global temp = new global();
+            string r1 = temp.numofreg(reg2), r2 = temp.numofreg(reg3), r3 = temp.numofreg(reg1);
+            string fun = getfunct(instruction);
             mask += "000000";
             mask += r1;
             mask += r2;
@@ -33,6 +34,21 @@ namespace archi
         public string getMask()
         {
             return mask;
+        }
+        public  string getfunct(string instruction)
+        {
+            global temp=new global(); 
+            if (instruction == "add")
+                return temp.getBinary(32);
+            if (instruction == "and")
+                return temp.getBinary(36);
+            if (instruction == "sub")
+                return temp.getBinary(34);
+            if (instruction == "nor")
+                return temp.getBinary(39);
+            if (instruction == "or")
+                return temp.getBinary(37);
+            return temp.getBinary(42);
         }
 
     }

@@ -15,6 +15,7 @@ namespace archi
         public Form1()
         {
             InitializeComponent();
+
         }
         public bool checkstructrue()
         {
@@ -40,14 +41,30 @@ namespace archi
             textBox2.Clear();
             if (checkstructrue())
             {
+                // check on space comma 
                 foreach (string line in textBox1.Lines)
                 {
-                    if (line.Length == 0||line.Substring(0, 5) == ".data"|| line.Substring(0, 5)==".text")
+                    if (line.Length == 0||line.Substring(0, 5) == ".data"|| line.Substring(0, 5)==".text" )
                         continue;
-
-                    archi.R obj = new R(new List<string>(line.Split(' ')));
-                    string mask = obj.getMask();
-                    textBox2.AppendText(mask + "\n");
+                    List<string> l = global.cutter(line);
+                    foreach(string s in l)
+                        MessageBox.Show(s);
+                    if (global.choice[l[0]] == 0)
+                    {
+                        archi.R obj = new R(l);
+                        string mask = obj.getMask();
+                        textBox2.AppendText(mask + "\n");
+                    }
+                    else if (global.choice[l[0]] == 2)
+                    {
+                        J.convertor(l);
+                        string mask = J.get_machine_code();
+                        textBox2.AppendText(mask + "\n");
+                    }
+                    else
+                    {
+                        //heshm
+                    }
                 }
             }
             else
@@ -58,6 +75,12 @@ namespace archi
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            global.fill_opcode();
+            global.init();
         }
     }
 }
