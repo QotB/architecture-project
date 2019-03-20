@@ -62,7 +62,9 @@ namespace archi
                     }
                     else
                     {
-                        //heshm
+                        I obj = new I(l);
+                        string mask = obj.getMask();
+                        textBox2.AppendText(mask + '\n');
                     }
                 }
             }

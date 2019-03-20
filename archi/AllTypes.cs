@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace archi
 {
-    class AllTypes
+    public class AllTypes
     {
-
+        public string mask = "";
+        public string getfunct(string instruction)
+        {
+            return "";
+        }
+        public string getMask()
+        {
+            return mask;
+        }
     }
 }
