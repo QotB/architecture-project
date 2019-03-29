@@ -10,6 +10,41 @@ namespace archi
     {
 
 
+        public static Dictionary<string, string> varbleaddressline;
+        public static Dictionary<string, List<string> > varbleaddressmemory;
+        public static Dictionary<string, string> varbledatatype;
+        public static Dictionary<string, List<string>> varablevalue;
+        public static Dictionary<string, List<string>> memory_values;
+        public static int address_line = 0;
+        public static int address_memory = 0;
+
+        public static List<string> split_data(string s)
+        {
+            List<string> l = new List<string>();
+            string a = "";
+            for (int i = 0; i < s.Length; i++)
+            {
+
+                if (s[i] == ' ' || s[i] == ',' || s[i] == ':' || s[i] == '.')
+                {
+                    if (a != "" && a != " " && a != ":" && a != ".")
+                    {
+                        l.Add(a);
+                        a = "";
+                    }
+                    a = "";
+                }
+                else
+                    a += s[i];
+            }
+            if (a != "" && a != " " && a != ":" && a != ".")
+            {
+                l.Add(a);
+                a = "";
+            }
+            return l;
+
+        }
         public static string getBinary(int x, int len)
         {
             string s = "";
@@ -217,9 +252,9 @@ namespace archi
             choice["j"] = 2;
             varbleaddressline = new Dictionary<string, string>();
             varablevalue = new Dictionary<string, List<string>>();
-            varbleaddressmemory = new Dictionary<string, string>();
-            varbledatatype = new Dictionary<string, string>(); 
-
+            varbleaddressmemory = new Dictionary<string, List<string> >();
+            varbledatatype = new Dictionary<string, string>();
+            memory_values = new Dictionary<string, List<string>>();
         }
     }
 }
